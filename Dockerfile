@@ -8,4 +8,5 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 	&& echo "upload_max_filesize = 50M;" >> /usr/local/etc/php/conf.d/uploads.ini
 
 RUN touch /usr/local/etc/php/conf.d/ssmtp.ini \
-	&& echo -e "[mail function]\nsendmail_path = /usr/sbin/ssmtp -t" >> /usr/local/etc/php/conf.d/ssmtp.ini
+	&& echo "[mail function]" >> /usr/local/etc/php/conf.d/ssmtp.ini \
+	&& echo "sendmail_path = /usr/sbin/ssmtp -t;" >> /usr/local/etc/php/conf.d/ssmtp.ini
