@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y ssmtp libfreetype6-dev \
 	&& docker-php-ext-install gd
 
 RUN touch /usr/local/etc/php/conf.d/uploads.ini \
+	&& echo "post_max_size = 50M;" >> /usr/local/etc/php/conf.d/uploads.ini \
 	&& echo "upload_max_filesize = 50M;" >> /usr/local/etc/php/conf.d/uploads.ini
 
 RUN touch /usr/local/etc/php/conf.d/ssmtp.ini \
