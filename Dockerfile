@@ -1,6 +1,6 @@
 FROM wordpress
 
-RUN apt-get update && apt-get install -y ssmtp libfreetype6-dev \
+RUN apt-get update && apt-get install -y ssmtp libfreetype6-dev libjpeg-dev \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr --with-freetype-dir=/usr \
 	&& docker-php-ext-install gd
 
